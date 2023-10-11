@@ -31,8 +31,9 @@ job_description = st.text_area("Enter the job description:")
 # Resume input
 resume = st.text_area("Enter the resume:")
 
-if job_description and resume:
-    similarity_score = calculate_similarity_score(job_description, resume)
+if st.button("Calculate Similarity"):
+    if job_description and resume:
+        similarity_score = calculate_similarity_score(job_description, resume)
+        st.write(f"Similarity Score: {similarity_score:.2f}%")
 
-    # Display similarity score
-    st.write(f"Similarity Score: {similarity_score:.2f}%")
+
